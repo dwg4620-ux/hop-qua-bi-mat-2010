@@ -3,50 +3,121 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hộp quà bí ẩn 20/10</title>
+<title>Vòng quay may mắn 20/10</title>
 <style>
-:root{color-scheme:light dark;--pink:#c04f7c;--rose:#f6c5d6;--cream:#fff8f6;--ink:light-dark(#55263c,#ffeaf2);--panel:light-dark(#ffffff,#301b29);--muted:light-dark(#8c6678,#d7a9bd)}
-*{box-sizing:border-box} body{margin:0;font-family:ui-rounded,"Segoe UI",system-ui,sans-serif;background:light-dark(#fff4f7,#1e111a);color:var(--ink)}
-#app{min-height:100vh;background:light-dark(radial-gradient(circle at 10% 0%,#ffe1ec,transparent 36%),#fff5f7,#fff5f7),radial-gradient(circle at 90% 5%,#60334e,transparent 35%),#1e111a;padding:28px 16px 44px;display:flex;justify-content:center;align-items:center}
-main{width:min(100%,720px);text-align:center}.eyebrow{letter-spacing:.18em;font-size:.75rem;font-weight:800;color:var(--pink)}h1{font-family:Georgia,serif;font-size:clamp(2rem,6vw,3.5rem);line-height:1.08;margin:12px 0;color:var(--ink)}.sub{color:var(--muted);max-width:470px;margin:0 auto 24px;line-height:1.6}.panel{background:var(--panel);border:1px solid light-dark(#f1cfdb,#593349);border-radius:28px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 55px #a54b6c18}.sparkles{font-size:1.3rem;letter-spacing:.7em;color:var(--pink);margin:8px 0 14px}.boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 18px}.gift{border:1px solid light-dark(#f1d0dd,#624054);border-radius:22px;background:light-dark(#fff5f8,#3a2031);padding:14px 8px 16px;cursor:pointer;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s;min-width:0}.gift:hover,.gift:focus-visible{transform:translateY(-5px);border-color:var(--pink);box-shadow:0 12px 24px #c04f7c20;outline:none}.gift:disabled{cursor:default;opacity:.7}.gift-icon{font-size:clamp(2.8rem,9vw,4.5rem);display:block;filter:drop-shadow(0 6px 5px #8d35551c)}.gift-label{display:block;margin-top:9px;font-weight:750;font-size:.9rem}.hint{font-size:.86rem;color:var(--muted);line-height:1.5}.result{display:none;margin-top:22px;padding:22px 16px;border-radius:22px;background:light-dark(#fff0f5,#442238);animation:pop .45s ease both}.result.show{display:block}.result-icon{font-size:3rem}.result h2{font-family:Georgia,serif;margin:8px 0;color:var(--pink);font-size:1.8rem}.result p{line-height:1.65;margin:8px auto;max-width:430px}.btn{margin-top:14px;border:0;border-radius:999px;padding:12px 20px;background:var(--pink);color:white;font-weight:800;cursor:pointer}.footer{margin-top:18px;font-size:.78rem;color:var(--muted)}.heart{color:var(--pink)}@keyframes pop{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}@media(max-width:420px){.boxes{gap:7px}.gift{padding:12px 4px}.gift-label{font-size:.78rem}.panel{border-radius:22px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--pink:#c04f7c;--ink:#55263c;--muted:#956d80}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:24px 14px 40px;background:radial-gradient(circle at 15% 10%,#fff 0,#fff5f8 34%,#f8e5f0 100%);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);text-align:center}
+main{max-width:620px;margin:auto}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,7vw,3.2rem);line-height:1.12;margin:10px 0;color:#b84778}
+.sub{line-height:1.65;color:var(--muted);margin:0 auto 20px;max-width:470px}
+.panel{background:#ffffffd9;border:1px solid #f5d8e4;border-radius:28px;padding:24px 16px;box-shadow:0 18px 55px #9f47741c}
+.sparkles{color:#d78eaf;letter-spacing:14px;margin-bottom:14px}
+#intro{font-weight:750;font-size:1.08rem}
+#wheelWrap{position:relative;width:min(82vw,360px);aspect-ratio:1;margin:24px auto 18px}
+#pointer{position:absolute;z-index:2;top:-10px;left:50%;transform:translateX(-50%);font-size:2rem;color:#b84778;filter:drop-shadow(0 3px 3px #8d355533)}
+#wheel{display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 12px 28px #c04f7c2b;border:7px solid white}
+#hub{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:19%;aspect-ratio:1;border-radius:50%;background:#fff8fb;border:5px solid #f6c5d6;display:grid;place-items:center;font-size:clamp(1.2rem,5vw,2rem);box-shadow:0 2px 10px #8d355533;pointer-events:none}
+button{border:0;border-radius:999px;padding:14px 27px;background:linear-gradient(135deg,#d45f91,#b84075);color:white;font-weight:850;font-size:1rem;cursor:pointer;box-shadow:0 7px 18px #c04f7c35}
+button:disabled{opacity:.55;cursor:wait}
+.hint{font-size:.9rem;color:var(--muted);line-height:1.5}
+#countdown{display:none;margin:18px auto 4px;max-width:420px;padding:18px;border-radius:20px;background:#fff0f5}
+#countNumber{font-family:Georgia,serif;font-size:3.7rem;font-weight:900;color:var(--pink);line-height:1.1}
+#countMessage{font-weight:750;margin-top:8px}
+.meter{height:6px;border-radius:9px;background:#f5d7e2;overflow:hidden;margin:14px auto 0;max-width:250px}
+#meterFill{height:100%;width:0;background:var(--pink);transition:width .7s ease}
+#result{display:none;margin-top:22px;padding:22px 16px;border-radius:22px;background:#fff0f5;animation:pop .45s ease both}
+#result.show{display:block}
+#resultIcon{font-size:3rem}
+#resultTitle{font-family:Georgia,serif;margin:8px 0;color:var(--pink);font-size:clamp(1.4rem,5vw,2rem)}
+#resultText{line-height:1.65;margin:8px auto;max-width:430px}
+#again{margin-top:14px}
+.footer{margin-top:18px;font-size:.78rem;color:var(--muted)}
+.confetti{position:fixed;top:-24px;z-index:10;pointer-events:none;font-size:22px;animation:fall 2.6s ease-in forwards}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
-<body><div id="app"><main>
-<div class="eyebrow">A LITTLE SURPRISE · 20/10</div>
-<h1>Một món quà<br>dành riêng cho cậu</h1>
-<p class="sub">Có ba chiếc hộp bí mật đang chờ cậu khám phá.<br>Chọn bằng trái tim nhé — món quà nào đang đợi cậu nhỉ? 💗</p>
-<section class="panel" aria-label="Trò chơi chọn hộp quà">
+<body>
+<main>
+<div style="font-size:2rem" aria-hidden="true">🌸 ✨ 🎀</div>
+<h1>Hộp quà bí ẩn 20/10</h1>
+<p class="sub">Vòng quay may mắn đang chờ bạn!<br>Quay một vòng để khám phá khoản lì xì bất ngờ từ <b>1.000đ đến 100.000đ</b> nhé 💗</p>
+<section class="panel" aria-label="Vòng quay may mắn">
 <div class="sparkles" aria-hidden="true">✦ ✧ ✦</div>
-<div id="intro">Chọn <strong>một</strong> chiếc hộp để mở quà nha!</div>
-<div class="boxes" id="boxes">
-<button class="gift" data-i="0" aria-label="Chọn hộp quà màu hồng"><span class="gift-icon">🎁</span><span class="gift-label">Hộp Hồng</span></button>
-<button class="gift" data-i="1" aria-label="Chọn hộp quà màu tím"><span class="gift-icon">🎀</span><span class="gift-label">Hộp Mơ</span></button>
-<button class="gift" data-i="2" aria-label="Chọn hộp quà bí mật"><span class="gift-icon">💝</span><span class="gift-label">Hộp Bí Mật</span></button>
+<div id="intro">Sẵn sàng chưa? Nhấn nút và để may mắn quyết định! 🎡</div>
+<div id="wheelWrap">
+<div id="pointer" aria-hidden="true">▼</div>
+<canvas id="wheel" width="720" height="720" role="img" aria-label="Vòng quay với các mức thưởng từ 1.000 đến 100.000 đồng"></canvas>
+<div id="hub" aria-hidden="true">💖</div>
 </div>
-<p class="hint" id="hint">Mỗi chiếc hộp đều giấu một điều bất ngờ ✨</p>
-<div class="result" id="result" aria-live="polite"><div class="result-icon" id="resultIcon">💗</div><h2 id="resultTitle">Một món quà dành cho cậu</h2><p id="resultText"></p><p><strong>Chúc cậu 20/10 thật vui vẻ, luôn được yêu thương và luôn là chính mình nhé! 💐</strong></p><button class="btn" id="again">Mở lại màn hình đầu</button></div>
+<button id="spin">🎡 QUAY MAY MẮN</button>
+<div id="countdown" aria-live="polite">
+<div id="countNumber">3</div><div id="countMessage">Vận may đang đến gần… 💓</div>
+<div class="meter"><div id="meterFill"></div></div>
+</div>
+<p class="hint" id="hint">Mỗi vòng quay là một bất ngờ — bạn sẽ nhận được bao nhiêu nhỉ? ✨</p>
+<div id="result" aria-live="polite">
+<div id="resultIcon">💸</div><h2 id="resultTitle"></h2><p id="resultText"></p>
+<button id="again">🔄 Quay lại từ đầu</button>
+</div>
 </section>
-<div class="footer">Được làm bằng một chút bí mật và thật nhiều <span class="heart">♥</span></div>
-</main></div>
+<p class="footer">Một chút may mắn và thật nhiều niềm vui nhân ngày 20/10 💗</p>
+</main>
 <script>
-(()=>{
- const prizes=[
-  {icon:'🌷',title:'Một bó hoa dành cho cậu',text:'Phần thưởng của cậu là một bó hoa xinh xắn! Mong rằng nó sẽ làm ngày hôm nay của cậu rực rỡ hơn một chút.'},
-  {icon:'🍰',title:'Một buổi hẹn ngọt ngào',text:'Cậu nhận được một buổi đi ăn/uống món mình thích cùng người tặng quà. Nhớ chọn món ngon nhất nhé!'},
-  {icon:'💌',title:'Một lời nhắn bí mật',text:'Có một điều muốn nói với cậu: cảm ơn vì đã xuất hiện và làm những ngày bình thường trở nên vui hơn. Cậu xứng đáng với thật nhiều điều tốt đẹp.'},
-  {icon:'🧸',title:'Một món quà nhỏ xinh',text:'Cậu được nhận một món quà nhỏ được chọn riêng cho cậu. Không cần quá lớn, chỉ mong cậu mỉm cười khi nhận nó.'},
-  {icon:'🍫',title:'Thẻ đổi đồ ngọt',text:'Phần thưởng là một món đồ ngọt cậu yêu thích. Hãy dùng chiếc “phiếu bí mật” này để đổi lấy một chút ngọt ngào nhé!'},
-  {icon:'✨',title:'Đặc quyền chọn cuộc vui',text:'Cậu được chọn một hoạt động vui mà hai đứa sẽ cùng làm. Hôm đó, cậu là nhân vật chính!'}
- ];
- const buttons=[...document.querySelectorAll('.gift')]; const result=document.querySelector('#result'); let played=false;
- buttons.forEach((button)=>button.addEventListener('click',()=>{
-  if(played)return; played=true; buttons.forEach(b=>b.disabled=true);
-  document.querySelector('#intro').textContent='Đang mở chiếc hộp bí mật… ✨';
-  document.querySelector('#hint').textContent='Tèn ten… món quà dành cho cậu đây rồi!';
-  button.querySelector('.gift-icon').textContent='✨';
-  setTimeout(()=>{const prize=prizes[Math.floor(Math.random()*prizes.length)];document.querySelector('#resultIcon').textContent=prize.icon;document.querySelector('#resultTitle').textContent=prize.title;document.querySelector('#resultText').textContent=prize.text;result.classList.add('show');document.querySelector('#intro').textContent='Hộp quà đã được mở!';result.scrollIntoView({behavior:'smooth',block:'nearest'});},650);
- }));
- document.querySelector('#again').addEventListener('click',()=>{played=false;buttons.forEach((b,i)=>{b.disabled=false;b.querySelector('.gift-icon').textContent=['🎁','🎀','💝'][i]});result.classList.remove('show');document.querySelector('#intro').textContent='Chọn một chiếc hộp để mở quà nha!';document.querySelector('#hint').textContent='Mỗi chiếc hộp đều giấu một điều bất ngờ ✨';});
-})();
-</script></body></html>
+const fmt=n=>n.toLocaleString('vi-VN')+'đ';
+const canvas=document.querySelector('#wheel'),ctx=canvas.getContext('2d');
+const colors=['#f8c8dc','#e9d5ff','#ffd6c2','#f7e7a9','#c9e9dd','#f6b8c8','#d8d7ff','#ffe1a8','#c4e8f4','#f7c4e1'];
+const N=10,TAU=Math.PI*2;
+let rotation=0,played=false,timers=[];
+function drawWheel(angle=0){
+ const cx=360,cy=360,r=345;ctx.clearRect(0,0,720,720);
+ for(let i=0;i<N;i++){
+  const start=angle+i*TAU/N-Math.PI/2,end=start+TAU/N;
+  ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,start,end);ctx.closePath();
+  ctx.fillStyle=colors[i];ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=5;ctx.stroke();
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(start+Math.PI/N);ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillStyle='#65344d';ctx.font='bold 27px system-ui,sans-serif';ctx.fillText(((i+1)*10)+'k',r-28,0);ctx.restore();
+ }
+ ctx.beginPath();ctx.arc(cx,cy,r,0,TAU);ctx.strokeStyle='#fff';ctx.lineWidth=8;ctx.stroke();
+}
+drawWheel();
+const spin=document.querySelector('#spin'),countdown=document.querySelector('#countdown'),result=document.querySelector('#result');
+function confetti(){for(let i=0;i<28;i++){const e=document.createElement('span');e.className='confetti';e.textContent=['💖','✨','🌸','🎀','💸'][i%5];e.style.left=Math.random()*100+'vw';e.style.animationDelay=Math.random()*.7+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),3400)}}
+spin.addEventListener('click',()=>{
+ if(played)return;played=true;spin.disabled=true;
+ document.querySelector('#intro').textContent='Vòng quay bắt đầu rồi… 🍀';
+ document.querySelector('#hint').textContent='Cùng chờ xem chiếc kim dừng ở đâu nhé! 💓';
+ countdown.style.display='block';
+ const messages=['Vận may đang đến gần… 💓','Kim quay nhanh quá! ✨','Sắp biết món quà của bạn rồi! 🎀'];
+ document.querySelector('#countNumber').textContent='3';document.querySelector('#countMessage').textContent=messages[0];document.querySelector('#meterFill').style.width='20%';
+ timers.push(setTimeout(()=>{document.querySelector('#countNumber').textContent='2';document.querySelector('#countMessage').textContent=messages[1];document.querySelector('#meterFill').style.width='50%'},850));
+ timers.push(setTimeout(()=>{document.querySelector('#countNumber').textContent='1';document.querySelector('#countMessage').textContent=messages[2];document.querySelector('#meterFill').style.width='80%'},1650));
+ const prize=(Math.floor(Math.random()*100)+1)*1000;
+ const segment=(prize/1000-1)%10;
+ const target=(TAU-(segment+.5)*TAU/N)%TAU;
+ const start=rotation;const normalized=((rotation%TAU)+TAU)%TAU;
+ const delta=TAU*7+((target-normalized+TAU)%TAU);rotation+=delta;
+ const duration=4500,started=performance.now();
+ function animate(now){
+  const t=Math.min(1,(now-started)/duration),eased=1-Math.pow(1-t,4);
+  drawWheel(start+(rotation-start)*eased);
+  if(t<1){requestAnimationFrame(animate)}else{
+   rotation=((rotation%TAU)+TAU)%TAU;
+   timers.push(setTimeout(()=>{
+    countdown.style.display='none';document.querySelector('#resultTitle').textContent='Bất ngờ! Bạn nhận được '+fmt(prize)+'!';
+    document.querySelector('#resultText').textContent='Ting ting! 🎉 Vòng quay đã chọn cho bạn '+fmt(prize)+'. Hãy chụp màn hình kết quả và nhận quà từ người tổ chức nhé!';
+    result.classList.add('show');document.querySelector('#intro').textContent='✨ Chúc mừng! Vận may đã gọi tên bạn! ✨';confetti();result.scrollIntoView({behavior:'smooth',block:'nearest'});
+   },400));
+  }
+ }
+ requestAnimationFrame(animate);
+});
+document.querySelector('#again').addEventListener('click',()=>{
+ timers.forEach(clearTimeout);timers=[];played=false;rotation=0;drawWheel();spin.disabled=false;countdown.style.display='none';result.classList.remove('show');
+ document.querySelector('#meterFill').style.width='0';document.querySelector('#intro').textContent='Sẵn sàng chưa? Nhấn nút và để may mắn quyết định! 🎡';
+ document.querySelector('#hint').textContent='Mỗi vòng quay là một bất ngờ — bạn sẽ nhận được bao nhiêu nhỉ? ✨';
+});
+</script>
+</body>
+</html>
