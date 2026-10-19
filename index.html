@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hộp quà bí ẩn 20/10</title>
+<style>
+:root{color-scheme:light dark;--pink:#c04f7c;--rose:#f6c5d6;--cream:#fff8f6;--ink:light-dark(#55263c,#ffeaf2);--panel:light-dark(#ffffff,#301b29);--muted:light-dark(#8c6678,#d7a9bd)}
+*{box-sizing:border-box} body{margin:0;font-family:ui-rounded,"Segoe UI",system-ui,sans-serif;background:light-dark(#fff4f7,#1e111a);color:var(--ink)}
+#app{min-height:100vh;background:light-dark(radial-gradient(circle at 10% 0%,#ffe1ec,transparent 36%),#fff5f7,#fff5f7),radial-gradient(circle at 90% 5%,#60334e,transparent 35%),#1e111a;padding:28px 16px 44px;display:flex;justify-content:center;align-items:center}
+main{width:min(100%,720px);text-align:center}.eyebrow{letter-spacing:.18em;font-size:.75rem;font-weight:800;color:var(--pink)}h1{font-family:Georgia,serif;font-size:clamp(2rem,6vw,3.5rem);line-height:1.08;margin:12px 0;color:var(--ink)}.sub{color:var(--muted);max-width:470px;margin:0 auto 24px;line-height:1.6}.panel{background:var(--panel);border:1px solid light-dark(#f1cfdb,#593349);border-radius:28px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 55px #a54b6c18}.sparkles{font-size:1.3rem;letter-spacing:.7em;color:var(--pink);margin:8px 0 14px}.boxes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:26px 0 18px}.gift{border:1px solid light-dark(#f1d0dd,#624054);border-radius:22px;background:light-dark(#fff5f8,#3a2031);padding:14px 8px 16px;cursor:pointer;color:var(--ink);transition:transform .18s,border-color .18s,box-shadow .18s;min-width:0}.gift:hover,.gift:focus-visible{transform:translateY(-5px);border-color:var(--pink);box-shadow:0 12px 24px #c04f7c20;outline:none}.gift:disabled{cursor:default;opacity:.7}.gift-icon{font-size:clamp(2.8rem,9vw,4.5rem);display:block;filter:drop-shadow(0 6px 5px #8d35551c)}.gift-label{display:block;margin-top:9px;font-weight:750;font-size:.9rem}.hint{font-size:.86rem;color:var(--muted);line-height:1.5}.result{display:none;margin-top:22px;padding:22px 16px;border-radius:22px;background:light-dark(#fff0f5,#442238);animation:pop .45s ease both}.result.show{display:block}.result-icon{font-size:3rem}.result h2{font-family:Georgia,serif;margin:8px 0;color:var(--pink);font-size:1.8rem}.result p{line-height:1.65;margin:8px auto;max-width:430px}.btn{margin-top:14px;border:0;border-radius:999px;padding:12px 20px;background:var(--pink);color:white;font-weight:800;cursor:pointer}.footer{margin-top:18px;font-size:.78rem;color:var(--muted)}.heart{color:var(--pink)}@keyframes pop{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}@media(max-width:420px){.boxes{gap:7px}.gift{padding:12px 4px}.gift-label{font-size:.78rem}.panel{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><div id="app"><main>
+<div class="eyebrow">A LITTLE SURPRISE · 20/10</div>
+<h1>Một món quà<br>dành riêng cho cậu</h1>
+<p class="sub">Có ba chiếc hộp bí mật đang chờ cậu khám phá.<br>Chọn bằng trái tim nhé — món quà nào đang đợi cậu nhỉ? 💗</p>
+<section class="panel" aria-label="Trò chơi chọn hộp quà">
+<div class="sparkles" aria-hidden="true">✦ ✧ ✦</div>
+<div id="intro">Chọn <strong>một</strong> chiếc hộp để mở quà nha!</div>
+<div class="boxes" id="boxes">
+<button class="gift" data-i="0" aria-label="Chọn hộp quà màu hồng"><span class="gift-icon">🎁</span><span class="gift-label">Hộp Hồng</span></button>
+<button class="gift" data-i="1" aria-label="Chọn hộp quà màu tím"><span class="gift-icon">🎀</span><span class="gift-label">Hộp Mơ</span></button>
+<button class="gift" data-i="2" aria-label="Chọn hộp quà bí mật"><span class="gift-icon">💝</span><span class="gift-label">Hộp Bí Mật</span></button>
+</div>
+<p class="hint" id="hint">Mỗi chiếc hộp đều giấu một điều bất ngờ ✨</p>
+<div class="result" id="result" aria-live="polite"><div class="result-icon" id="resultIcon">💗</div><h2 id="resultTitle">Một món quà dành cho cậu</h2><p id="resultText"></p><p><strong>Chúc cậu 20/10 thật vui vẻ, luôn được yêu thương và luôn là chính mình nhé! 💐</strong></p><button class="btn" id="again">Mở lại màn hình đầu</button></div>
+</section>
+<div class="footer">Được làm bằng một chút bí mật và thật nhiều <span class="heart">♥</span></div>
+</main></div>
+<script>
+(()=>{
+ const prizes=[
+  {icon:'🌷',title:'Một bó hoa dành cho cậu',text:'Phần thưởng của cậu là một bó hoa xinh xắn! Mong rằng nó sẽ làm ngày hôm nay của cậu rực rỡ hơn một chút.'},
+  {icon:'🍰',title:'Một buổi hẹn ngọt ngào',text:'Cậu nhận được một buổi đi ăn/uống món mình thích cùng người tặng quà. Nhớ chọn món ngon nhất nhé!'},
+  {icon:'💌',title:'Một lời nhắn bí mật',text:'Có một điều muốn nói với cậu: cảm ơn vì đã xuất hiện và làm những ngày bình thường trở nên vui hơn. Cậu xứng đáng với thật nhiều điều tốt đẹp.'},
+  {icon:'🧸',title:'Một món quà nhỏ xinh',text:'Cậu được nhận một món quà nhỏ được chọn riêng cho cậu. Không cần quá lớn, chỉ mong cậu mỉm cười khi nhận nó.'},
+  {icon:'🍫',title:'Thẻ đổi đồ ngọt',text:'Phần thưởng là một món đồ ngọt cậu yêu thích. Hãy dùng chiếc “phiếu bí mật” này để đổi lấy một chút ngọt ngào nhé!'},
+  {icon:'✨',title:'Đặc quyền chọn cuộc vui',text:'Cậu được chọn một hoạt động vui mà hai đứa sẽ cùng làm. Hôm đó, cậu là nhân vật chính!'}
+ ];
+ const buttons=[...document.querySelectorAll('.gift')]; const result=document.querySelector('#result'); let played=false;
+ buttons.forEach((button)=>button.addEventListener('click',()=>{
+  if(played)return; played=true; buttons.forEach(b=>b.disabled=true);
+  document.querySelector('#intro').textContent='Đang mở chiếc hộp bí mật… ✨';
+  document.querySelector('#hint').textContent='Tèn ten… món quà dành cho cậu đây rồi!';
+  button.querySelector('.gift-icon').textContent='✨';
+  setTimeout(()=>{const prize=prizes[Math.floor(Math.random()*prizes.length)];document.querySelector('#resultIcon').textContent=prize.icon;document.querySelector('#resultTitle').textContent=prize.title;document.querySelector('#resultText').textContent=prize.text;result.classList.add('show');document.querySelector('#intro').textContent='Hộp quà đã được mở!';result.scrollIntoView({behavior:'smooth',block:'nearest'});},650);
+ }));
+ document.querySelector('#again').addEventListener('click',()=>{played=false;buttons.forEach((b,i)=>{b.disabled=false;b.querySelector('.gift-icon').textContent=['🎁','🎀','💝'][i]});result.classList.remove('show');document.querySelector('#intro').textContent='Chọn một chiếc hộp để mở quà nha!';document.querySelector('#hint').textContent='Mỗi chiếc hộp đều giấu một điều bất ngờ ✨';});
+})();
+</script></body></html>
